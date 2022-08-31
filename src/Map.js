@@ -1,7 +1,12 @@
 import ReactDOM from "react-dom";
+import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
-import "./App.css";
-import React, { useEffect, useState } from "react";
+
+import fetchFakeData from "./api/fetchFakeData";
+import Popup from "./components/Popup";
+import "./Map.css";
+
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const Map = () => {
   const mapContainerRef = useRef(null);
@@ -83,7 +88,5 @@ const Map = () => {
 
   return <div className="map-container" ref={mapContainerRef} />;
 };
-
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 export default Map;

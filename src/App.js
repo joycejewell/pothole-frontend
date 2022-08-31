@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import Map from "./Map";
 
 function App() {
   const [openDrawer, toggleDrawer] = useState(false);
@@ -36,6 +37,7 @@ function App() {
           <Navbar.Item>contact</Navbar.Item>
         </Navbar.Items>
       </Navbar.Wrapper>
+      <Map />
     </Styles.Wrapper>
   );
 }
