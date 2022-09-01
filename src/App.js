@@ -2,7 +2,55 @@ import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Map from "./Map";
 import "./App.css";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+// export default function App() {
+//   return (
+//     <Router>
+//       <div>
+//         <nav>
+//           <ul>
+//             <li>
+//               <Link to="/map">map</Link>
+//             </li>
+//             <li>
+//               <Link to="/about">about</Link>
+//             </li>
+//             <li>
+//               <Link to="/contact">contact</Link>
+//             </li>
+//           </ul>
+//         </nav>
+
+//         {/* A <Switch> looks through its children <Route>s and
+//             renders the first one that matches the current URL. */}
+//         <Switch>
+//           <Route path="/about">
+//             <About />
+//           </Route>
+//           <Route path="/contact">
+//             <Users />
+//           </Route>
+//           <Route path="/map">
+//             <Home />
+//           </Route>
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+// }
+
+// function Map() {
+//   return <h2>Home</h2>;
+// }
+
+// function About() {
+//   return <h2>About</h2>;
+// }
+
+// function Contact() {
+//   return <h2>Users</h2>;
+// }
 function App() {
   const [openDrawer, toggleDrawer] = useState(false);
   const drawerRef = useRef(null);
@@ -36,9 +84,9 @@ function App() {
         </HamburgerButton.Wrapper>
 
         <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-          <Navbar.Item>Map!</Navbar.Item>
-          <Navbar.Item>What is Pothole?</Navbar.Item>
-          <Navbar.Item>Contact</Navbar.Item>
+          <Navbar.Item>map</Navbar.Item>
+          <Navbar.Item>about</Navbar.Item>
+          <Navbar.Item>contact</Navbar.Item>
         </Navbar.Items>
       </Navbar.Wrapper>
       <Map />
