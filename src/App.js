@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Map from "./Map";
+import "./App.css";
 
 function App() {
   const [openDrawer, toggleDrawer] = useState(false);
@@ -25,16 +26,19 @@ function App() {
       <CSSReset />
 
       <Navbar.Wrapper>
-        <Navbar.Logo>Logo</Navbar.Logo>
+        <Navbar.Logo>
+          {" "}
+          <img src="./pothole-logo.png" alt="logo" height={100} />
+        </Navbar.Logo>
 
         <HamburgerButton.Wrapper onClick={() => toggleDrawer(true)}>
           <HamburgerButton.Lines />
         </HamburgerButton.Wrapper>
 
         <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-          <Navbar.Item>about</Navbar.Item>
-          <Navbar.Item>map</Navbar.Item>
-          <Navbar.Item>contact</Navbar.Item>
+          <Navbar.Item>Map!</Navbar.Item>
+          <Navbar.Item>What is Pothole?</Navbar.Item>
+          <Navbar.Item>Contact</Navbar.Item>
         </Navbar.Items>
       </Navbar.Wrapper>
       <Map />
