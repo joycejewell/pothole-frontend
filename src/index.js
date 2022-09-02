@@ -5,6 +5,7 @@ import App from "./App";
 import Map from "./Map";
 import About from "./About";
 import Contact from "./Contact";
+import RegistrationForm from "./RegistrationForm";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route exact path="/map" element={<Map />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/registrationform" element={<RegistrationForm />} />
       </Routes>
     </Router>
   </React.StrictMode>,

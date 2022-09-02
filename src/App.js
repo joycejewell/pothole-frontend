@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Map from "./Map";
 import "./App.css";
 import { Link } from "react-router-dom";
+import Header from "./components/header";
 
 // function App() {
 //   return (
@@ -57,6 +58,9 @@ function App() {
           <Navbar.Item>
             <Link to="/contact">contact</Link>
           </Navbar.Item>
+          <Navbar.item>
+            <Link to="/registrationform">registration</Link>
+          </Navbar.item>
         </Navbar.Items>
       </Navbar.Wrapper>
       <Map />
