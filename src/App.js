@@ -2,55 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Map from "./Map";
 import "./App.css";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// export default function App() {
+// function App() {
 //   return (
 //     <Router>
-//       <div>
-//         <nav>
-//           <ul>
-//             <li>
-//               <Link to="/map">map</Link>
-//             </li>
-//             <li>
-//               <Link to="/about">about</Link>
-//             </li>
-//             <li>
-//               <Link to="/contact">contact</Link>
-//             </li>
-//           </ul>
-//         </nav>
-
-//         {/* A <Switch> looks through its children <Route>s and
-//             renders the first one that matches the current URL. */}
-//         <Switch>
-//           <Route path="/about">
-//             <About />
-//           </Route>
-//           <Route path="/contact">
-//             <Users />
-//           </Route>
-//           <Route path="/map">
-//             <Home />
-//           </Route>
-//         </Switch>
-//       </div>
+//       <Routes>
+//         <Route exact path="/" element={<Map />} />
+//         {/* <Route exact path="/about" element={<About />} />
+//         <Route exact path="/contact" element={<Contact />} /> */}
+//       </Routes>
 //     </Router>
 //   );
 // }
 
-// function Map() {
-//   return <h2>Home</h2>;
-// }
-
-// function About() {
-//   return <h2>About</h2>;
-// }
-
-// function Contact() {
-//   return <h2>Users</h2>;
-// }
 function App() {
   const [openDrawer, toggleDrawer] = useState(false);
   const drawerRef = useRef(null);
@@ -75,7 +40,6 @@ function App() {
 
       <Navbar.Wrapper>
         <Navbar.Logo>
-          {" "}
           <img src="./pothole-logo.png" alt="logo" height={100} />
         </Navbar.Logo>
 
@@ -84,9 +48,15 @@ function App() {
         </HamburgerButton.Wrapper>
 
         <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-          <Navbar.Item>map</Navbar.Item>
-          <Navbar.Item>about</Navbar.Item>
-          <Navbar.Item>contact</Navbar.Item>
+          <Navbar.Item>
+            <Link to="/map">map</Link>
+          </Navbar.Item>
+          <Navbar.Item>
+            <Link to="/about">about</Link>
+          </Navbar.Item>
+          <Navbar.Item>
+            <Link to="/contact">contact</Link>
+          </Navbar.Item>
         </Navbar.Items>
       </Navbar.Wrapper>
       <Map />
