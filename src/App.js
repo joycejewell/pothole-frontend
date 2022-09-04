@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Map from "./Map";
+// import logo from "./logo.svg";
 import "./App.css";
 import { Link } from "react-router-dom";
-import Header from "./components/header";
+// import Header from "./components/Header";
+// import RegistrationForm from "./components/RegistrationForm";
 
 // function App() {
 //   return (
@@ -36,35 +38,37 @@ function App() {
   }, []);
 
   return (
-    <Styles.Wrapper>
-      <CSSReset />
+    <div>
+      <Styles.Wrapper>
+        <CSSReset />
 
-      <Navbar.Wrapper>
-        <Navbar.Logo>
-          <img src="./pothole-logo.png" alt="logo" height={100} />
-        </Navbar.Logo>
+        <Navbar.Wrapper>
+          <Navbar.Logo>
+            <img src="./pothole-logo.png" alt="logo" height={100} />
+          </Navbar.Logo>
 
-        <HamburgerButton.Wrapper onClick={() => toggleDrawer(true)}>
-          <HamburgerButton.Lines />
-        </HamburgerButton.Wrapper>
+          <HamburgerButton.Wrapper onClick={() => toggleDrawer(true)}>
+            <HamburgerButton.Lines />
+          </HamburgerButton.Wrapper>
 
-        <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-          <Navbar.Item>
-            <Link to="/map">map</Link>
-          </Navbar.Item>
-          <Navbar.Item>
+          <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
+            <Navbar.Item>
+              <Link to="/map">map</Link>
+            </Navbar.Item>
+            {/* <Navbar.Item>
             <Link to="/about">about</Link>
           </Navbar.Item>
           <Navbar.Item>
             <Link to="/contact">contact</Link>
-          </Navbar.Item>
-          <Navbar.item>
-            <Link to="/registrationform">registration</Link>
-          </Navbar.item>
-        </Navbar.Items>
-      </Navbar.Wrapper>
+          </Navbar.Item> */}
+            <Navbar.Item>
+              <Link to="/RegistrationForm">register here!</Link>
+            </Navbar.Item>
+          </Navbar.Items>
+        </Navbar.Wrapper>
+      </Styles.Wrapper>
       <Map />
-    </Styles.Wrapper>
+    </div>
   );
 }
 
@@ -72,7 +76,6 @@ const Styles = {
   Wrapper: styled.main`
     display: flex;
     background-color: #eeeeee;
-    height: 100vh;
   `,
 };
 
