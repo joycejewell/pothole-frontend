@@ -1,6 +1,7 @@
+/* eslint import/no-webpack-loader-syntax: off */
 import ReactDOM from "react-dom";
 import React, { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "!mapbox-gl";
 
 import fetchFakeData from "./api/fetchFakeData";
 import Popup from "./components/Popup";

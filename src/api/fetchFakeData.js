@@ -1,3 +1,4 @@
+/* src/api/fetchFakeData.js */
 /**
  * A complete Coordinate Pair consisting of a latitude and longitude
  * @typedef {Object} CoordinatePair

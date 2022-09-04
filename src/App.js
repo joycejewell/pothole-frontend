@@ -52,9 +52,6 @@ function App() {
           </HamburgerButton.Wrapper>
 
           <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-            <Navbar.Item>
-              <Link to="/map">map</Link>
-            </Navbar.Item>
             {/* <Navbar.Item>
             <Link to="/about">about</Link>
           </Navbar.Item>
@@ -101,7 +98,7 @@ const Navbar = {
     }
   `,
   Logo: styled.h1`
-    border: 1px solid gray;
+    border: ;
     padding: 0.5rem 1rem;
   `,
   Items: styled.ul`
