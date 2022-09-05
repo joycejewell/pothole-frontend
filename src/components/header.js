@@ -3,7 +3,7 @@ function Header() {
   return (
     <nav className="bg-dark navbar-dark navbar">
       <div className="row col-12 d-flex justify-content-center text-white">
-        <h3>register here!</h3>
+        <h3>register!</h3>
       </div>
     </nav>
   );

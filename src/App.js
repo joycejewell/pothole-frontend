@@ -52,14 +52,14 @@ function App() {
           </HamburgerButton.Wrapper>
 
           <Navbar.Items ref={drawerRef} openDrawer={openDrawer}>
-            {/* <Navbar.Item>
-            <Link to="/about">about</Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Link to="/contact">contact</Link>
-          </Navbar.Item> */}
             <Navbar.Item>
-              <Link to="/RegistrationForm">register here!</Link>
+              <Link to="/about">about</Link>
+            </Navbar.Item>
+            <Navbar.Item>
+              <Link to="/RegistrationForm">register</Link>
+            </Navbar.Item>
+            <Navbar.Item>
+              <Link to="LoginForm">login</Link>
             </Navbar.Item>
           </Navbar.Items>
         </Navbar.Wrapper>
@@ -206,7 +206,7 @@ const CSSReset = createGlobalStyle`
   }  
 
   body {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
     font-family: merriweather;
   }
 `;

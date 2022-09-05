@@ -5,3 +5,5 @@
 // Buily with a RESTful Ruby on Rails back-end and REACT front-end
 // Utilizes MapBox API for mapping, pin drops, and user comments
 // Employs Google Fonts, Material Icons, and [insert CSS library like bootstrap]for design
+
+// Shoot me a line at potholeforbikes@gmail.com with any comments, suggestions, feedback or otherwise. Thank you in advance!
