@@ -13,19 +13,22 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const Map = () => {
   const mapContainerRef = useRef(null);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
-  const [location, setLocation] = useState([]);
+  // const [state, setState] = useState({
+  //   location: [],
+  // });
+  // console.log(location);
 
   // initialize map when component mounts
   useEffect(() => {
     axios.get("http://localhost:3000/location").then((res) => {
-      setLocation(res.data);
-      console.log(res.data, location);
+      // setState((state) => ({ ...state, location: res.data }));
     });
+
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       // See style options here: https://docs.mapbox.com/api/maps/#styles
       style: "mapbox://styles/mapbox/streets-v11",
-      center: [-104.9876, 39.7405],
+      center: [-104.9877, 39.55849],
       zoom: 12.5,
     });
 

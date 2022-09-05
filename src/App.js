@@ -1,23 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import Map from "./Map";
-// import logo from "./logo.svg";
 import "./App.css";
 import { Link } from "react-router-dom";
-// import Header from "./components/Header";
-// import RegistrationForm from "./components/RegistrationForm";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route exact path="/" element={<Map />} />
-//         {/* <Route exact path="/about" element={<About />} />
-//         <Route exact path="/contact" element={<Contact />} /> */}
-//       </Routes>
-//     </Router>
-//   );
-// }
 
 function App() {
   const [openDrawer, toggleDrawer] = useState(false);
