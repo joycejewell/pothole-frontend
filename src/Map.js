@@ -1,6 +1,7 @@
 /* eslint import/no-webpack-loader-syntax: off */
+import axios from "axios";
 import ReactDOM from "react-dom";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "!mapbox-gl";
 
 import fetchFakeData from "./api/fetchFakeData";
@@ -12,9 +13,14 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const Map = () => {
   const mapContainerRef = useRef(null);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
+  const [location, setLocation] = useState([]);
 
   // initialize map when component mounts
   useEffect(() => {
+    axios.get("http://localhost:3000/location").then((res) => {
+      setLocation(res.data);
+      console.log(res.data, location);
+    });
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       // See style options here: https://docs.mapbox.com/api/maps/#styles

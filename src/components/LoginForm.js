@@ -1,34 +1,70 @@
-// import { useState } from "react";
-// import ReactDOM from "react-dom/client";
-
-// function MyForm() {
-//   const [inputs, setInputs] = useState({});
-
-//   const handleChange = (event) => {
-//     const name = event.target.name;
-//     const value = event.target.value;
-//     setInputs((values) => ({ ...values, [name]: value }));
-//   };
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     alert(inputs);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label>
-//         Enter your name:
-//         <input type="text" name="email" value={inputs.email || ""} onChange={handleChange} />
-//       </label>
-//       <label>
-//         Enter your age:
-//         <input type="number" name="password" value={inputs.password || ""} onChange={handleChange} />
-//       </label>
-//       <input type="submit" />
-//     </form>
-//   );
-// }
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<MyForm />);
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+import React from "react";
+import "./style.css";
+class LoginForm extends React.Component {
+  constructor() {
+    super();
+    this.state = { email: "", password: "", redirect: false };
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+  handlePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+  handleSubmit(event) {
+    let user = {
+      email: this.state.email,
+      password: this.state.password,
+    };
+    axios.post("http://localhost:3000/sessions", user).then((res) => {
+      axios.defaults.headers.common["Authorization"] = "Bearer " + res.data.jwt;
+      localStorage.setItem("jwt", res.data.jwt);
+      this.setState({ redirect: true });
+    });
+    event.preventDefault();
+  }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit} className="form">
+        {this.state.redirect ? <Navigate push to="/" /> : null}
+        <div className="form-body">
+          <div className="username">
+            <div className="email">
+              <label className="form__label">Email </label>
+              <input
+                value={this.state.email}
+                onChange={this.handleEmail}
+                type="email"
+                id="email"
+                className="form__input"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+          <div className="password">
+            <label className="form__label">Password </label>
+            <input
+              value={this.state.password}
+              onChange={this.handlePassword}
+              className="form__input"
+              type="password"
+              id="password"
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <div className="footer">
+          <button type="submit" className="btn">
+            log in
+          </button>
+        </div>
+      </form>
+    );
+  }
+}
+export default LoginForm;

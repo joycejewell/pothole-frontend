@@ -35,7 +35,7 @@ class RegistrationForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="form">
-        {this.state.redirect ? <Navigate push to="/" /> : null}
+        {this.state.redirect ? <Navigate push to="/LoginForm" /> : null}
         <div className="form-body">
           <div className="username">
             <div className="email">
