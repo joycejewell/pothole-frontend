@@ -191,8 +191,8 @@ const CSSReset = createGlobalStyle`
   }  
 
   body {
-    font-size: 2.4rem;
-    font-family: merriweather;
+    font-size: 2rem;
+    font-family: Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 `;
 

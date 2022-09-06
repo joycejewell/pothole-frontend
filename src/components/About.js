@@ -4,7 +4,7 @@ import "./About.css";
 class About extends React.Component {
   render() {
     return (
-      <div className="row col-12 d-flex">
+      <div className="row col-12 d-flex about">
         <h1>What is Pothole?</h1>
         <p>
           A full-stack web app, designed for biking enthusiasts, trail or road, that allows users to set location pins
