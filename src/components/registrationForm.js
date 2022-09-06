@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
 import "./style.css";
+
 class RegistrationForm extends React.Component {
   constructor() {
     super();

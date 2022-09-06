@@ -19,6 +19,7 @@ const Map = () => {
   // initialize map when component mounts
   useEffect(() => {
     axios.get("http://localhost:3000/location").then((res) => {
+      console.log(res);
       //   setLocation(...location, res.data);
       // })
       // .then((res) => {
@@ -33,16 +34,9 @@ const Map = () => {
       });
       res.data.forEach((place) => {
         let marker = new mapboxgl.Marker().setLngLat([place.longitude, place.latitude]).addTo(map);
-        console.log(marker);
+        let popup = new mapboxgl.Popup().setText(place.description).addTo(map);
       });
 
-      // initialize pin_drop icon of hazard location
-      // axios.get("http://localhost:3000/pin_drop").then((res) => {});
-
-      // initialize reaction on if hazard is still present or not
-      // axios.get("http://localhost:3000/pin_drop_reaction").then((res) => {});
-      // // add navigation control (zoom buttons)
-      // map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
 
       // map.on("load", () => {
       //   // add the data source for new a feature collection with no features
