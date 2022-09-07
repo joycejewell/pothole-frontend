@@ -40,8 +40,10 @@ const Map = () => {
       res.data.forEach((place) => {
         const el = document.createElement("div");
         el.className = "marker";
-
-        let popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        let popupText = place.description.split(" - ");
+        let popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+          '<h3><a href="' + popupText[1] + '">' + popupText[0] + "</a></h3>"
+        );
         let marker = new mapboxgl.Marker(el).setLngLat([place.longitude, place.latitude]).setPopup(popup).addTo(map);
         console.log(marker);
       });

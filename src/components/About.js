@@ -14,7 +14,7 @@ class About extends React.Component {
         <ul>
           <li>Built with a RESTful Ruby on Rails back-end and REACT front-end</li>
           <li>Utilizes MapBox API for mapping, pin drops, and user comments</li>
-          <li>Employs Google Fonts, Material Icons, and [insert CSS library like bootstrap]for design</li>
+          <li>Employs MapBox [insert CSS library like bootstrap]for design</li>
         </ul>
         <p>
           Shoot me a line at potholeforbikes@gmail.com with any comments, suggestions, feedback or otherwise. Thank you
