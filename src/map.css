@@ -2,3 +2,22 @@
   height: 800px;
   width: 500px;
 }
+
+.marker {
+  background-image: url("https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png"); 
+  /* // you can import the image or reference a url  */
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+
+
+  /* ghostbike: https://live.staticflickr.com/7076/14045956461_f7a7ec3a63_b.jpg */
+
+  /* hazard:-pothole: https://images.roadtrafficsigns.com/img/md/K/pothole-slow-down-sign-k-0757.png */
+
+  /* hazard-closed path:  */
+
+  

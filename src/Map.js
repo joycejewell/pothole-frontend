@@ -32,11 +32,36 @@ const Map = () => {
         center: [res.data[0].longitude, res.data[0].latitude],
         zoom: 9,
       });
+      // res.data.forEach((place) => {
+      //   let popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+      //   let marker = new mapboxgl.Marker().setLngLat([place.longitude, place.latitude]).setPopup(popup).addTo(map);
+      //   console.log(marker);
+      // });
       res.data.forEach((place) => {
-        let marker = new mapboxgl.Marker().setLngLat([place.longitude, place.latitude]).addTo(map);
-        let popup = new mapboxgl.Popup().setText(place.description).addTo(map);
+        const el = document.createElement("div");
+        el.className = "marker";
+
+        let popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        let marker = new mapboxgl.Marker(el).setLngLat([place.longitude, place.latitude]).setPopup(popup).addTo(map);
+        console.log(marker);
       });
 
+      //floifian front enders
+
+      // const newLocation = res.data.map(l => {
+      //   console.log("l", l)
+      //   const newPopupRef = React.createRef()
+      //   const popupNode = document.createElement("div", { ref: newPopupRef });
+      //   // ReactDOM.render(<Popup feature={feature} />, popupNode);
+      //   return ({
+      //   ...l,
+      //   element: React.createElement("div")
+      // })})
+      // console.log("newLocation", newLocation)
+      // res.data.forEach((place) => {
+      //   let marker = new mapboxgl.Marker().setLngLat([place.longitude, place.latitude]).addTo(map);
+      // //   let popup = new mapboxgl.Popup().setText(place.description).addTo(map);
+      // });
 
       // map.on("load", () => {
       //   // add the data source for new a feature collection with no features
@@ -66,9 +91,11 @@ const Map = () => {
       //   const { lng, lat } = map.getCenter();
       //   // fetch new data
       //   const results = await fetchFakeData({ longitude: lng, latitude: lat });
+      //   console.log("results", results)
       //   // update "random-points-data" source with new data
       //   // all layers that consume the "random-points-data" data source will be updated automatically
-      //   map.getSource("random-points-data").setData(results);
+      //   // map.getSource("random-points-data").setData(results);
+      //   map.getSource("random-points-data").setData({ features: res.data});
       // });
 
       // // change cursor to pointer when user hovers over a clickable feature

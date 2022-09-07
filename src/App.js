@@ -46,6 +46,9 @@ function App() {
             <Navbar.Item>
               <Link to="LoginForm">login</Link>
             </Navbar.Item>
+            <Navbar.Item>
+              <Link to="DropPin">drop pin</Link>
+            </Navbar.Item>
           </Navbar.Items>
         </Navbar.Wrapper>
       </Styles.Wrapper>
